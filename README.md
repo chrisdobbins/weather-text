@@ -4,7 +4,7 @@
 A thing I made to get current weather conditions and a 5-day forecast for a US city/state combo
 
 ## More Formal Description
-This is a Twilio function that responds to a text message with either a 5-day forecast or the current weather for the city and state (US-only at the moment, unfortunately). It's set up as a webhook for a Twilio SMS-capable phone number set up for this purpose.
+This is a [Twilio function](https://www.twilio.com/docs/runtime/functions) that responds to a text message with either a 5-day forecast or the current weather for the city and state (US-only at the moment, unfortunately). It's set up as a webhook for a Twilio SMS-capable phone number set up for this purpose.
 
 ## Additional Information
 The SMS must be formatted like this:
