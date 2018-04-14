@@ -23,7 +23,8 @@ exports.handler = function(context, event, callback) {
     switch (processedQuery.type) {
       case "weather":
       case "current":
-          got.post(`http://api.wunderground.com/api/${context.WU_KEY}/conditions/q/ ${processedQuery.state}/${processedQuery.city}.json`, {json: true})
+          got.post(`http://api.wunderground.com/api/${context.WU_KEY}/conditions/q/${processedQuery.state}/${processedQuery.city}.json`,
+                   {json: true})
     .then(response => {
             if (!response.body.current_observation) {
                callback(null, locNotFound);
@@ -36,7 +37,8 @@ exports.handler = function(context, event, callback) {
         break;
         
       case "forecast":
-          got.post(`http://api.wunderground.com/api/${context.WU_KEY}/forecast10day/q/ ${processedQuery.state}/${processedQuery.city}.json`, {json: true})
+          got.post(`http://api.wunderground.com/api/${context.WU_KEY}/forecast10day/q/${processedQuery.state}/${processedQuery.city}.json`,
+                   {json: true})
     .then(response => {
             // 'forecastday' is not a typo
             callback(null, formatForecast(response.body.forecast.txt_forecast.forecastday));
